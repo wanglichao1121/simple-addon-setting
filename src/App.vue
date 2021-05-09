@@ -43,7 +43,7 @@
             detectRetina: true
         }"
     />
-    <h1 class="title">这里大概是插件的名字</h1>
+    <h1 class="title">《 插 件 的 名 字 》</h1>
     <Setting style="width: 500px; margin:auto;"/>
   </div>
 </template>

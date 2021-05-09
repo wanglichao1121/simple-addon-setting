@@ -35,13 +35,13 @@ export default {
   },
   methods:{
     submit(){
+      let formdata=new FormData();
+      formdata.append("url",this.url);
+      formdata.append("id",this.id);
+      formdata.append("pwd",this.pwd);
       fetch('/submit',{
         method: 'POST',
-        body: JSON.stringify({
-          url:this.url,
-          id:this.id,
-          pwd:this.pwd
-        })
+        body: formdata
       }).then((res)=>{
         if(res.ok)
           return res;
