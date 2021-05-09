@@ -4,9 +4,14 @@
       <i class="el-icon-setting card-icon"/><span id="card-title">插件配置</span>
     </div>
     <el-form ref="form" :model="form" label-width="80px">
-      <el-form-item label="URL">
-        <el-tooltip class="item" effect="light" content="配置Harbor私人仓库所在URL" placement="top">
+      <el-form-item label="仓库地址">
+        <el-tooltip class="item" effect="light" content="配置Harbor仓库地址" placement="top">
           <el-input v-model="url"></el-input>
+        </el-tooltip>
+      </el-form-item>
+      <el-form-item label="项目名">
+        <el-tooltip class="item" effect="light" content="配置Harbor私人仓库项目名" placement="top">
+          <el-input v-model="project"></el-input>
         </el-tooltip>
       </el-form-item>
       <el-form-item label="用户名">
@@ -30,7 +35,8 @@ export default {
     return {
       url: '',
       id: '',
-      pwd: ''
+      pwd: '',
+      project: ''
     }
   },
   methods:{
@@ -39,7 +45,8 @@ export default {
       formdata.append("url",this.url);
       formdata.append("id",this.id);
       formdata.append("pwd",this.pwd);
-      fetch('/submit',{
+      formdata.append("project",this.project);
+      fetch('/setting',{
         method: 'POST',
         body: formdata
       }).then((res)=>{

@@ -43,8 +43,9 @@
             detectRetina: true
         }"
     />
-    <h1 class="title">《 插 件 的 名 字 》</h1>
-    <Setting style="width: 500px; margin:auto;"/>
+    <h1 class="title">大主教本尼迪塔斯</h1>
+    <Setting style="width: 500px; margin:auto;margin-bottom: 30px;"/>
+    <span style="color: #aaaaaa;">Designed by 折大鸡腿观光团</span>
   </div>
 </template>
 
